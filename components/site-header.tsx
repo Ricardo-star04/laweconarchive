@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/base-path";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { HeaderSearch } from "@/components/header-search";
@@ -179,7 +180,7 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
           <div className="min-w-0 flex-1 lg:flex-none lg:shrink-0">
             <Link href="/" className="group flex min-w-0 items-center gap-2.5" aria-label="Law and Economics Archive home">
               <Image
-                src="/brand/archive-emblem.png"
+                src={withBasePath("/brand/archive-emblem.png")}
                 alt=""
                 width={512}
                 height={501}

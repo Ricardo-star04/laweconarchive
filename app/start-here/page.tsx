@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/base-path";
 import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
@@ -107,7 +108,7 @@ export default function StartHerePage() {
 
         <figure className="mx-auto w-full max-w-[420px] md:max-w-none">
           <Image
-            src="/editorial/start-here-justice.jpg"
+            src={withBasePath("/editorial/start-here-justice.jpg")}
             alt="A line drawing of blindfolded Justice holding scales and a sword"
             width={800}
             height={1000}

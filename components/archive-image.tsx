@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 
 type ArchiveImageVariant = "decorative" | "portrait" | "tallPortrait" | "thumbnail";
 
@@ -44,7 +45,7 @@ export function ArchiveImage({
   return (
     <figure className={["overflow-hidden", className].join(" ")}>
       <Image
-        src={src}
+        src={withBasePath(src)}
         alt={hiddenFromAssistiveTech ? "" : alt}
         aria-hidden={hiddenFromAssistiveTech}
         width={720}

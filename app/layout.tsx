@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getSearchIndex } from "@/lib/search";
 import { getSiteUrl } from "@/lib/site-url";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   icons: {
-    icon: "/brand/archive-emblem.png",
-    apple: "/brand/archive-emblem.png"
+    icon: withBasePath("/brand/archive-emblem.png"),
+    apple: withBasePath("/brand/archive-emblem.png")
   },
   openGraph: {
     type: "website",

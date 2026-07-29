@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/base-path";
 
 const researchLinks = [
   { href: "/start-here", label: "Start Here" },
@@ -24,7 +25,7 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-6xl gap-7 px-5 py-7 sm:px-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.9fr)_160px] lg:gap-9 lg:py-8">
         <div className="flex items-start gap-3.5">
           <Image
-            src="/brand/archive-emblem.png"
+            src={withBasePath("/brand/archive-emblem.png")}
             alt=""
             width={512}
             height={501}

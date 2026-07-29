@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const isDevelopment = process.env.NODE_ENV === "development";
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const githubPagesBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "/laweconarchive";
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -72,19 +74,28 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  ...(isGitHubPages
+    ? {
+        output: "export" as const,
+        basePath: githubPagesBasePath,
+        trailingSlash: true
+      }
+    : {
+        async headers() {
+          return [
+            {
+              source: "/:path*",
+              headers: securityHeaders
+            }
+          ];
+        }
+      }),
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders
-      }
-    ];
-  },
   images: {
+    unoptimized: isGitHubPages,
     remotePatterns: [
       {
         protocol: "https",

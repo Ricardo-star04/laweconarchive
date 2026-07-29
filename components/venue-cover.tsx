@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 import type { IndexedReading } from "@/lib/topics";
 import type { PublicationCover as PublicationCoverData } from "@/lib/venue-covers";
 
@@ -18,7 +19,7 @@ export function PublicationCover({
       <div className={["flex items-center justify-center bg-white/85", isThumbnail ? "min-h-24 p-1" : "min-h-[360px] p-3"].join(" ")}>
         {cover.imageUrl ? (
           <Image
-            src={cover.imageUrl}
+            src={withBasePath(cover.imageUrl)}
             alt={`${cover.label} cover`}
             width={360}
             height={520}

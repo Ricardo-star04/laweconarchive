@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 import { SectionTitle } from "@/components/section-title";
 
 export default function AboutPage() {
@@ -30,7 +31,7 @@ export default function AboutPage() {
       <section className="grid gap-7 border-y border-border/70 py-7 md:grid-cols-[minmax(260px,0.8fr)_minmax(0,1.2fr)] md:items-center">
         <figure>
           <Image
-            src="/brand/archivum-iuris-et-oeconomiae.png"
+            src={withBasePath("/brand/archivum-iuris-et-oeconomiae.png")}
             alt="The Law and Economics Archive mark: blindfolded Justice holding a sword and scales above the words Archivum Iuris et Oeconomiae"
             width={1000}
             height={1000}
