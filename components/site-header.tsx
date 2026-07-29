@@ -193,7 +193,7 @@ export function SiteHeader() {
                 <span className="block truncate font-serifCn text-[1.15rem] text-white sm:text-xl lg:text-2xl">
                   <span className="sm:hidden">
                     Law{" "}
-                    <span className="inline-block -translate-y-[0.01em] px-[0.04em] text-[1.16em] italic">&amp;</span>{" "}
+                    <span className="mobile-calligraphic-ampersand">&amp;</span>{" "}
                     Economics
                   </span>
                   <span className="hidden sm:inline">Law and Economics Archive</span>
