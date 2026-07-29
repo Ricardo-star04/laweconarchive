@@ -2,7 +2,34 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { withBasePath } from "@/lib/base-path";
 import type { SearchItem } from "@/lib/search";
+
+const searchItemTypes = new Set<SearchItem["type"]>([
+  "Page",
+  "Field",
+  "Reading",
+  "Case",
+  "Concept",
+  "Scholar",
+  "Article"
+]);
+
+function isSearchItem(value: unknown): value is SearchItem {
+  if (!value || typeof value !== "object") return false;
+  const item = value as Partial<SearchItem>;
+
+  return (
+    typeof item.title === "string" &&
+    typeof item.href === "string" &&
+    item.href.startsWith("/") &&
+    typeof item.type === "string" &&
+    searchItemTypes.has(item.type as SearchItem["type"]) &&
+    typeof item.description === "string" &&
+    Array.isArray(item.keywords) &&
+    item.keywords.every((keyword) => typeof keyword === "string")
+  );
+}
 
 function resultScore(item: SearchItem, query: string) {
   const title = item.title.toLowerCase();
@@ -33,11 +60,9 @@ function resultScore(item: SearchItem, query: string) {
 }
 
 export function HeaderSearch({
-  items,
   onOpenChange,
   inverse = false
 }: {
-  items: SearchItem[];
   onOpenChange?: (isOpen: boolean) => void;
   inverse?: boolean;
 }) {
@@ -45,9 +70,37 @@ export function HeaderSearch({
   const searchResultsId = `${searchInputId}-results`;
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const loadPromiseRef = useRef<Promise<void> | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [items, setItems] = useState<SearchItem[]>([]);
+  const [loadState, setLoadState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const normalizedQuery = query.trim().toLowerCase().replace(/\s+/g, " ");
+
+  const loadSearchIndex = useCallback(() => {
+    if (loadPromiseRef.current || loadState === "ready") return;
+
+    setLoadState("loading");
+    const request = fetch(withBasePath("/search-index.json"), {
+      cache: "force-cache",
+      credentials: "same-origin"
+    })
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Search index request failed with ${response.status}.`);
+        const payload: unknown = await response.json();
+        if (!Array.isArray(payload) || payload.length > 5000 || !payload.every(isSearchItem)) {
+          throw new Error("Search index response was invalid.");
+        }
+        setItems(payload);
+        setLoadState("ready");
+      })
+      .catch(() => {
+        setLoadState("error");
+        loadPromiseRef.current = null;
+      });
+
+    loadPromiseRef.current = request;
+  }, [loadState]);
 
   const results = useMemo(() => {
     if (normalizedQuery.length < 2) return [];
@@ -107,6 +160,7 @@ export function HeaderSearch({
         onClick={() => {
           const nextOpen = !isOpen;
           setIsOpen(nextOpen);
+          if (nextOpen) loadSearchIndex();
           if (!nextOpen) setQuery("");
           onOpenChange?.(nextOpen);
         }}
@@ -149,7 +203,18 @@ export function HeaderSearch({
             className="min-h-11 w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
           />
 
-          {results.length ? (
+          {loadState === "loading" || loadState === "idle" ? (
+            <p className="mt-3 py-3 text-sm text-muted" aria-live="polite">
+              Loading archive index…
+            </p>
+          ) : loadState === "error" ? (
+            <div className="mt-3 py-3 text-sm text-muted" aria-live="polite">
+              <p>Search index is temporarily unavailable.</p>
+              <button type="button" onClick={loadSearchIndex} className="mt-2 text-accent underline underline-offset-4">
+                Try again
+              </button>
+            </div>
+          ) : results.length ? (
             <>
               <p className="mt-3 text-xs text-muted" aria-live="polite">
                 {results.length} {results.length === 1 ? "result" : "results"} · ranked by relevance

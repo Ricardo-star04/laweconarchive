@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { DecorativePlate } from "@/components/decorative-plate";
+import { getSiteUrl } from "@/lib/site-url";
 import { getAllReadings, getAllTopics } from "@/lib/topics";
 import { INSTITUTIONAL_VISUALS } from "@/lib/visual-archive";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: getSiteUrl()
+  }
+};
 
 const EXTERNAL_RESEARCH_LINKS = [
   {

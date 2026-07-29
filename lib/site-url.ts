@@ -14,5 +14,9 @@ export function getSiteUrl() {
     throw new Error("NEXT_PUBLIC_SITE_URL must use the http or https protocol.");
   }
 
-  return parsedUrl.origin;
+  if (parsedUrl.username || parsedUrl.password || parsedUrl.search || parsedUrl.hash) {
+    throw new Error("NEXT_PUBLIC_SITE_URL must not include credentials, a query, or a fragment.");
+  }
+
+  return `${parsedUrl.origin}${parsedUrl.pathname.replace(/\/+$/, "")}`;
 }

@@ -8,7 +8,7 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https:",
+  "img-src 'self' data: blob:",
   "font-src 'self' data:",
   `connect-src 'self'${isDevelopment ? " ws: http: https:" : ""}`,
   "media-src 'self'",
@@ -95,53 +95,7 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
   images: {
-    unoptimized: isGitHubPages,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "commons.wikimedia.org"
-      },
-      {
-        protocol: "https",
-        hostname: "upload.wikimedia.org"
-      },
-      {
-        protocol: "https",
-        hostname: "ars.els-cdn.com"
-      },
-      {
-        protocol: "https",
-        hostname: "www.aeaweb.org"
-      },
-      {
-        protocol: "https",
-        hostname: "pup-assets.imgix.net"
-      },
-      {
-        protocol: "https",
-        hostname: "yale-press-us.imgix.net"
-      },
-      {
-        protocol: "https",
-        hostname: "images.routledge.com"
-      },
-      {
-        protocol: "https",
-        hostname: "www.bis.org"
-      },
-      {
-        protocol: "https",
-        hostname: "www.fsb.org"
-      },
-      {
-        protocol: "https",
-        hostname: "columbialawreview.org"
-      },
-      {
-        protocol: "https",
-        hostname: "www.law.cam.ac.uk"
-      }
-    ]
+    unoptimized: isGitHubPages
   }
 };
 

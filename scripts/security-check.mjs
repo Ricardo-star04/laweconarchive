@@ -96,6 +96,42 @@ for (const requiredSetting of [
   if (!nextConfig.includes(requiredSetting)) failures.push(`next.config.ts is missing ${requiredSetting}`);
 }
 
+const rootLayout = fs.readFileSync(path.join(projectRoot, "app", "layout.tsx"), "utf8");
+if (!rootLayout.includes('httpEquiv="Content-Security-Policy"')) {
+  failures.push("app/layout.tsx must include a CSP meta policy for static hosting");
+}
+if (!rootLayout.includes('name="referrer"')) {
+  failures.push("app/layout.tsx must include a referrer policy for static hosting");
+}
+
+const workflowDirectory = path.join(projectRoot, ".github", "workflows");
+for (const workflowFile of walk(workflowDirectory).filter((file) => /\.ya?ml$/i.test(file))) {
+  const source = fs.readFileSync(workflowFile, "utf8");
+  const relativePath = path.relative(projectRoot, workflowFile);
+
+  for (const match of source.matchAll(/^\s*uses:\s*([^\s#]+)/gm)) {
+    const action = match[1];
+    if (action.startsWith("./") || action.startsWith("docker://")) continue;
+    if (!/@[0-9a-f]{40}$/i.test(action)) {
+      failures.push(`${relativePath}: third-party action is not pinned to a full commit SHA (${action})`);
+    }
+  }
+}
+
+const fieldHistory = fs.readFileSync(path.join(projectRoot, "lib", "field-history.ts"), "utf8");
+for (const match of fieldHistory.matchAll(/^\s*imageUrl:\s*"([^"]+)"/gm)) {
+  const imageUrl = match[1];
+  if (/^https?:\/\//i.test(imageUrl)) {
+    failures.push("lib/field-history.ts: scholar portrait must use a local image path");
+    continue;
+  }
+  if (!imageUrl.startsWith("/scholar-portraits/")) continue;
+  const localImagePath = path.join(projectRoot, "public", imageUrl);
+  if (!fs.existsSync(localImagePath)) {
+    failures.push(`lib/field-history.ts: missing local scholar portrait ${imageUrl}`);
+  }
+}
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 if (!siteUrl) {
   const message = "NEXT_PUBLIC_SITE_URL is not set; local metadata will use http://localhost:3005";

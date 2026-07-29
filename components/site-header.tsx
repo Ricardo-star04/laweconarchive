@@ -6,7 +6,6 @@ import { withBasePath } from "@/lib/base-path";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { HeaderSearch } from "@/components/header-search";
-import type { SearchItem } from "@/lib/search";
 
 type NavigationLink = {
   href: string;
@@ -159,7 +158,7 @@ const mobileNavGroups: NavigationGroup[] = [
   }
 ];
 
-export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
+export function SiteHeader() {
   const pathname = usePathname() ?? "/";
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
@@ -285,14 +284,13 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
                 );
               })}
               <li className="ml-1">
-                <HeaderSearch items={searchItems} inverse />
+                <HeaderSearch inverse />
               </li>
             </ul>
           </nav>
 
           <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
             <HeaderSearch
-              items={searchItems}
               inverse
               onOpenChange={(searchIsOpen) => {
                 if (searchIsOpen) setIsOpen(false);

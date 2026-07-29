@@ -3,9 +3,26 @@ import "./globals.css";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { getSearchIndex } from "@/lib/search";
 import { getSiteUrl } from "@/lib/site-url";
 import { withBasePath } from "@/lib/base-path";
+
+const isDevelopment = process.env.NODE_ENV === "development";
+const staticContentSecurityPolicy = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  `connect-src 'self'${isDevelopment ? " ws: http: https:" : ""}`,
+  "media-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-src 'none'",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+  ...(isDevelopment ? [] : ["upgrade-insecure-requests"])
+].join("; ");
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -25,9 +42,6 @@ export const metadata: Metadata = {
     "governance",
     "regulation"
   ],
-  alternates: {
-    canonical: "/"
-  },
   icons: {
     icon: withBasePath("/brand/archive-emblem.png"),
     apple: withBasePath("/brand/archive-emblem.png")
@@ -47,13 +61,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const searchItems = getSearchIndex();
-
   return (
     <html lang="en">
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content={staticContentSecurityPolicy} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body>
         <div className="academic-shell min-h-screen text-ink">
-          <SiteHeader searchItems={searchItems} />
+          <SiteHeader />
           <Breadcrumbs />
           <main className="mx-auto w-full max-w-6xl px-5 py-6 sm:px-6 md:py-8">{children}</main>
           <SiteFooter />
