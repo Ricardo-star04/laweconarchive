@@ -120,6 +120,7 @@ export default function ComparativeLawPage() {
                 imageClassName="block transition duration-300 group-hover:scale-[1.015]"
                 captionClassName="hidden !mt-0 px-4 pb-3 text-[0.72rem] leading-5 md:flex"
                 framed={false}
+                loadMedia="(min-width: 768px)"
               />
               <div className="flex min-w-0 flex-col px-4 py-4 md:px-5 md:py-5">
                 <div className="flex items-center justify-between gap-2">

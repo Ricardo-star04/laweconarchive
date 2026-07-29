@@ -68,6 +68,7 @@ export default function HomePage() {
               sourceLabel={INSTITUTIONAL_VISUALS.stanfordLawSchool.sourceLabel}
               className="[&_img]:opacity-100"
               loading="eager"
+              loadMedia="(min-width: 1024px)"
             />
             <p className="mt-3 text-xs leading-6 text-muted">
               Visual materials are used sparingly as institutional cues, with source links retained.

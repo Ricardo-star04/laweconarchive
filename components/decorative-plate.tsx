@@ -7,6 +7,7 @@ export function DecorativePlate({
   sourceLabel,
   className = "",
   loading,
+  loadMedia,
   variant = "decorative"
 }: {
   src: string;
@@ -15,6 +16,7 @@ export function DecorativePlate({
   sourceLabel?: string;
   className?: string;
   loading?: "eager" | "lazy";
+  loadMedia?: string;
   variant?: "decorative" | "portrait" | "tallPortrait";
 }) {
   return (
@@ -26,6 +28,7 @@ export function DecorativePlate({
       variant={variant}
       className={className}
       loading={loading}
+      loadMedia={loadMedia}
       imageClassName="opacity-90"
       hiddenFromAssistiveTech
     />

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { MediaGatedImage } from "@/components/media-gated-image";
 import { withBasePath } from "@/lib/base-path";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -179,12 +179,15 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
         <div className="flex items-center justify-between gap-2 lg:gap-4">
           <div className="min-w-0 flex-1 lg:flex-none lg:shrink-0">
             <Link href="/" className="group flex min-w-0 items-center gap-2.5" aria-label="Law and Economics Archive home">
-              <Image
+              <MediaGatedImage
                 src={withBasePath("/brand/archive-emblem.png")}
                 alt=""
+                ariaHidden
+                media="(min-width: 640px)"
                 width={512}
                 height={501}
-                priority
+                loading="eager"
+                fetchPriority="high"
                 className="hidden h-10 w-10 shrink-0 object-contain grayscale invert mix-blend-screen sm:block lg:h-11 lg:w-11"
               />
               <span className="min-w-0">
