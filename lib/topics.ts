@@ -2060,25 +2060,26 @@ export function getReadingBySlug(slug: string) {
 
 function normalizeAuthorText(value: string) {
   return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .replace(/jr\.?/g, "jr")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-export function getReadingsByScholarName(name: string, surname: string) {
-  const normalizedSurname = normalizeAuthorText(surname);
-  const normalizedName = normalizeAuthorText(name)
+export function getReadingsByScholarName(name: string) {
+  const normalizePersonName = (value: string) =>
+    normalizeAuthorText(value)
     .split(" ")
-    .filter((part) => part.length > 1)
+    .filter((part) => part.length > 1 && !["and", "jr", "sr", "ii", "iii", "iv"].includes(part))
     .join(" ");
+  const normalizedName = normalizePersonName(name);
 
   return getAllReadings()
     .filter((reading) => {
-      const authors = normalizeAuthorText(reading.authors);
-      const hasSurname = new RegExp(`(^| )${normalizedSurname.replaceAll(" ", " ")}( |$)`).test(authors);
-      return authors.includes(normalizedName) || hasSurname;
+      const authors = normalizePersonName(reading.authors);
+      return new RegExp(`(^| )${normalizedName.replaceAll(" ", "\\s+")}( |$)`).test(authors);
     })
     .sort((first, second) => first.sortYear - second.sortYear || first.title.localeCompare(second.title));
 }

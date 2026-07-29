@@ -59,7 +59,7 @@ export default async function ScholarDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const archiveReadings = getReadingsByScholarName(scholar.name, scholar.surname);
+  const archiveReadings = getReadingsByScholarName(scholar.name);
   const representativeContributions = sortWorksChronologically(scholar.majorWorks);
 
   return (
