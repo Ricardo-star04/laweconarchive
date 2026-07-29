@@ -46,24 +46,33 @@ export default function HomePage() {
   return (
     <div className="-mx-5 space-y-10 sm:-mx-6 md:space-y-12">
       <section className="relative overflow-hidden bg-paper/55">
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-10 sm:px-6 md:py-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center">
+        <div className="relative mx-auto grid max-w-6xl gap-7 px-5 py-7 sm:gap-10 sm:px-6 sm:py-10 md:py-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center">
           <div className="max-w-4xl">
             <h1 className="font-serifCn text-4xl leading-[1.06] text-black md:text-5xl lg:text-6xl">
               Corporate, securities, and financial law through institutional analysis.
             </h1>
-            <p className="mt-7 max-w-3xl text-base leading-8 text-ink md:text-lg">
+            <p className="mt-5 max-w-3xl text-base leading-7 text-ink sm:mt-7 sm:leading-8 md:text-lg">
               The archive organizes source-based materials for reading, teaching, and early-stage research. Its emphasis
               is on legal relations, incentives, market institutions, and verifiable scholarship rather than commentary
               cycles.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4 text-sm">
-              <Link href="/start-here" className="bg-institute px-5 py-2.5 text-white hover:bg-accent">
+            <div className="mt-6 grid grid-cols-3 items-center gap-2 text-xs sm:mt-9 sm:flex sm:flex-wrap sm:gap-4 sm:text-sm">
+              <Link
+                href="/start-here"
+                className="whitespace-nowrap bg-institute px-2 py-2.5 text-center text-white hover:bg-accent sm:px-5"
+              >
                 Start here
               </Link>
-              <Link href="/literature" className="text-institute underline underline-offset-4 hover:text-accent">
+              <Link
+                href="/literature"
+                className="whitespace-nowrap text-center text-institute underline underline-offset-4 hover:text-accent"
+              >
                 Browse readings
               </Link>
-              <Link href="/concepts" className="text-institute underline underline-offset-4 hover:text-accent">
+              <Link
+                href="/concepts"
+                className="whitespace-nowrap text-center text-institute underline underline-offset-4 hover:text-accent"
+              >
                 View concepts
               </Link>
             </div>
