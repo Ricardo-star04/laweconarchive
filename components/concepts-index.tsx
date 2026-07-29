@@ -113,7 +113,7 @@ export function ConceptsIndex({
             <select
               value={activeField}
               onChange={(event) => updateFilters({ field: event.target.value })}
-              className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+              className="archive-select"
             >
               {["All", ...fields].map((field) => (
                 <option key={field} value={field}>
@@ -128,7 +128,7 @@ export function ConceptsIndex({
             <select
               value={activeLevel}
               onChange={(event) => updateFilters({ level: event.target.value as (typeof LEVELS)[number] })}
-              className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+              className="archive-select"
             >
               {LEVELS.map((level) => (
                 <option key={level} value={level}>
@@ -143,7 +143,7 @@ export function ConceptsIndex({
             <select
               value={activeLetter}
               onChange={(event) => updateFilters({ letter: event.target.value })}
-              className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+              className="archive-select"
             >
               {["All", ...letters].map((letter) => (
                 <option key={letter} value={letter}>

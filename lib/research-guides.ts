@@ -318,7 +318,7 @@ export const COMPARATIVE_DIMENSIONS: ComparativeDimension[] = [
     caution:
       "Do not treat Delaware rules as globally generalizable without asking whether other systems have comparable courts, bar specialization, shareholder litigation, and market expectations.",
     image: {
-      src: "https://commons.wikimedia.org/wiki/Special:FilePath/New_Castle_Court_House_Courtroom.JPG",
+      src: "/comparative-law/delaware-courtroom.jpg",
       alt: "Courtroom inside the New Castle Court House in Delaware",
       caption: "New Castle Court House courtroom, Delaware",
       sourceHref: "https://commons.wikimedia.org/wiki/File:New_Castle_Court_House_Courtroom.JPG",
@@ -377,7 +377,7 @@ export const COMPARATIVE_DIMENSIONS: ComparativeDimension[] = [
     caution:
       "Disclosure rules cannot be evaluated apart from enforcement capacity, investor base, market liquidity, and litigation procedure.",
     image: {
-      src: "https://commons.wikimedia.org/wiki/Special:FilePath/Gecina_-_Ibox.jpg",
+      src: "/comparative-law/esma-ibox-paris.jpg",
       alt: "The Ibox office building in Paris",
       caption: "Ibox building, Paris, associated with ESMA's institutional setting",
       sourceHref: "https://commons.wikimedia.org/wiki/File:Gecina_-_Ibox.jpg",
@@ -437,7 +437,7 @@ export const COMPARATIVE_DIMENSIONS: ComparativeDimension[] = [
     caution:
       "Investor protection should be read with actual enforcement and ownership structure, not only with formal statutory rights.",
     image: {
-      src: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Entrance_of_Tokyo_Stock_Exchange_Main_Building_20240329.jpg",
+      src: "/comparative-law/tokyo-stock-exchange.jpg",
       alt: "Entrance of the Tokyo Stock Exchange Main Building",
       caption: "Tokyo Stock Exchange Main Building entrance",
       sourceHref: "https://commons.wikimedia.org/wiki/File:The_Entrance_of_Tokyo_Stock_Exchange_Main_Building_20240329.jpg",
@@ -496,7 +496,7 @@ export const COMPARATIVE_DIMENSIONS: ComparativeDimension[] = [
     caution:
       "Crisis rules should not be inferred only from statutes; central-bank practice, supervisory discretion, and political constraints often shape outcomes.",
     image: {
-      src: "https://commons.wikimedia.org/wiki/Special:FilePath/Lehman_Brothers-20080915.jpg",
+      src: "/comparative-law/lehman-brothers-2008.jpg",
       alt: "Lehman Brothers headquarters in New York City on September 15, 2008",
       caption: "Lehman Brothers headquarters, September 15, 2008",
       sourceHref: "https://commons.wikimedia.org/wiki/File:Lehman_Brothers-20080915.jpg",
@@ -556,7 +556,7 @@ export const COMPARATIVE_DIMENSIONS: ComparativeDimension[] = [
     caution:
       "Preemption cases should be read together with institutional capacity and regulatory-arbitrage incentives.",
     image: {
-      src: "https://commons.wikimedia.org/wiki/Special:FilePath/Us-treasury-building.jpg",
+      src: "/comparative-law/us-treasury-building.jpg",
       alt: "United States Treasury building in Washington, D.C.",
       caption: "United States Treasury building, Washington, D.C.",
       sourceHref: "https://commons.wikimedia.org/wiki/File:Us-treasury-building.jpg",

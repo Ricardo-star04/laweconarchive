@@ -213,7 +213,7 @@ export function ScholarIndex({ scholars, letters }: { scholars: ScholarRecord[];
               <select
                 value={activeLetter}
                 onChange={(event) => updateFilters({ letter: event.target.value })}
-                className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+                className="archive-select"
               >
                 {["All", ...letters].map((letter) => (
                   <option key={letter} value={letter}>
@@ -246,7 +246,7 @@ export function ScholarIndex({ scholars, letters }: { scholars: ScholarRecord[];
               <select
                 value={activeArea}
                 onChange={(event) => updateFilters({ area: event.target.value })}
-                className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+                className="archive-select"
               >
                 {AREA_OPTIONS.map((area) => (
                   <option key={area.label} value={area.label}>

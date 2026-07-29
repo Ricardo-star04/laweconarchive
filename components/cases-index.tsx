@@ -173,7 +173,7 @@ export function CasesIndex({
               <select
                 value={activeField}
                 onChange={(event) => updateFilters({ field: event.target.value })}
-                className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+                className="archive-select"
               >
                 {["All", ...fields].map((field) => (
                   <option key={field} value={field}>
@@ -217,7 +217,7 @@ export function CasesIndex({
               <select
                 value={sortBy}
                 onChange={(event) => updateFilters({ sort: event.target.value as SortOption })}
-                className="w-full border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:border-institute"
+                className="archive-select"
               >
                 {SORT_OPTIONS.map((option) => (
                   <option key={option.value} value={option.value}>

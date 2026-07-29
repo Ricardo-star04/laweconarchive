@@ -407,7 +407,7 @@ export function MethodDecisionAid() {
             <select
               value={data}
               onChange={(event) => setData(event.target.value as DataShape)}
-              className="mt-3 w-full border border-border bg-white px-3 py-2.5 text-sm text-ink focus:border-institute focus:outline-none"
+              className="archive-select mt-3"
             >
               {dataOptions.map((option) => (
                 <option key={option.value} value={option.value}>
