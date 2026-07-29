@@ -32,10 +32,10 @@
 
   .mobile-calligraphic-ampersand {
     display: inline-block;
-    transform: translateY(0.015em);
+    transform: translateY(0.04em);
     padding-inline: 0.035em;
     font-family: "Libre Baskerville", serif;
-    font-size: 1.2em;
+    font-size: 0.94em;
     font-style: italic;
     font-weight: 400;
     line-height: 1;
