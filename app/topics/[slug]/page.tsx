@@ -128,7 +128,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
                   <p className="font-serifCn text-2xl text-signal">{reading.year}</p>
                   <p className="mt-1 text-xs uppercase text-muted">{getReadingLevel(index)}</p>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-serifCn text-xl text-accent">{reading.title}</h3>
                   <p className="mt-2 text-sm text-ink">{reading.authors}</p>
                   <p className="mt-1 text-xs text-muted">{reading.venue}</p>
@@ -139,10 +139,10 @@ export default async function TopicDetailPage({ params }: PageProps) {
                     </summary>
                     <p className="mt-3 text-sm leading-relaxed text-muted">{reading.summary}</p>
                   </details>
-                  <details className="mt-3 bg-paper px-4 py-3">
+                  <details className="mt-3 min-w-0 bg-paper px-3 py-3 md:px-4">
                     <summary className="cursor-pointer text-sm text-accent">Citation / BibTeX</summary>
-                    <p className="mt-3 text-sm leading-7 text-ink">{citationData.citation}</p>
-                    <pre className="mt-3 overflow-x-auto whitespace-pre bg-white p-3 text-xs leading-6 text-muted">
+                    <p className="mt-3 break-words text-sm leading-7 text-ink md:break-normal">{citationData.citation}</p>
+                    <pre className="mt-3 max-w-full whitespace-pre-wrap break-all bg-white p-3 text-xs leading-6 text-muted md:overflow-x-auto md:whitespace-pre md:break-normal">
                       {citationData.bibtex}
                     </pre>
                   </details>
@@ -175,7 +175,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
                   <p className="font-serifCn text-2xl text-signal">{String(index + 1).padStart(2, "0")}</p>
                   <p className="mt-1 text-xs uppercase text-muted">{getReadingLevel(index)}</p>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-serifCn text-xl text-accent">{reading.title}</h3>
                   <p className="mt-2 text-sm text-ink">{reading.authors}</p>
                   <p className="mt-1 text-xs text-muted">{reading.year} · {reading.venue}</p>
@@ -185,8 +185,8 @@ export default async function TopicDetailPage({ params }: PageProps) {
                       Summary and citation
                     </summary>
                     <p className="mt-3 text-sm leading-relaxed text-muted">{reading.summary}</p>
-                    <p className="mt-3 text-sm leading-7 text-ink">{citationData.citation}</p>
-                    <pre className="mt-3 overflow-x-auto whitespace-pre bg-white p-3 text-xs leading-6 text-muted">
+                    <p className="mt-3 break-words text-sm leading-7 text-ink md:break-normal">{citationData.citation}</p>
+                    <pre className="mt-3 max-w-full whitespace-pre-wrap break-all bg-white p-3 text-xs leading-6 text-muted md:overflow-x-auto md:whitespace-pre md:break-normal">
                       {citationData.bibtex}
                     </pre>
                   </details>

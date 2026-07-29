@@ -11,12 +11,12 @@ export function PageContents({ items }: { items: PageContentsItem[] }) {
       aria-label="On this page"
       className="border-y border-border/70 py-3"
     >
-      <div className="flex min-w-0 items-baseline gap-4 md:gap-6">
-        <p className="shrink-0 text-xs uppercase tracking-[0.14em] text-muted">Jump to</p>
-        <ul className="flex min-w-0 flex-1 gap-5 overflow-x-auto whitespace-nowrap pb-1 text-sm text-muted md:flex-wrap md:overflow-visible md:pb-0">
+      <div className="min-w-0 md:flex md:items-baseline md:gap-6">
+        <p className="mb-3 text-xs uppercase tracking-[0.14em] text-muted md:mb-0 md:shrink-0">Jump to</p>
+        <ul className="grid min-w-0 grid-cols-2 gap-x-4 gap-y-3 text-sm text-muted sm:grid-cols-3 md:flex md:flex-1 md:flex-wrap md:gap-5 md:whitespace-nowrap">
           {items.map((item) => (
-            <li key={item.id} className="shrink-0">
-              <a href={`#${item.id}`} className="underline-offset-4 hover:text-accent hover:underline">
+            <li key={item.id} className="min-w-0 md:shrink-0">
+              <a href={`#${item.id}`} className="block break-words underline-offset-4 hover:text-accent hover:underline md:break-normal">
                 {item.label}
               </a>
             </li>
