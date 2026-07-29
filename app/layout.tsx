@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@fontsource/libre-baskerville/latin-400-italic.css";
 import "./globals.css";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { SiteFooter } from "@/components/site-footer";
