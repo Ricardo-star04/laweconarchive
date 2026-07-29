@@ -1,0 +1,17 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Reading stack illustration</title>
+  <desc id="desc">A restrained drawing of stacked papers and bibliographic notes.</desc>
+  <rect width="720" height="420" fill="#F6F4EF"/>
+  <rect x="92" y="72" width="420" height="260" fill="#FFFFFF" stroke="#D7D5CC"/>
+  <rect x="132" y="106" width="420" height="260" fill="#FFFFFF" stroke="#D7D5CC"/>
+  <rect x="172" y="140" width="420" height="260" fill="#FFFFFF" stroke="#D7D5CC"/>
+  <path d="M220 198H468" stroke="#0B2D4D" stroke-width="3"/>
+  <path d="M220 232H520" stroke="#9AA5AD" stroke-width="2"/>
+  <path d="M220 264H504" stroke="#9AA5AD" stroke-width="2"/>
+  <path d="M220 296H452" stroke="#9AA5AD" stroke-width="2"/>
+  <path d="M220 328H496" stroke="#9AA5AD" stroke-width="2"/>
+  <rect x="220" y="164" width="96" height="22" fill="#F2F5F6" stroke="#D7D5CC"/>
+  <path d="M238 175H298" stroke="#2F6F9F" stroke-width="2"/>
+  <circle cx="548" cy="180" r="6" fill="#2F6F9F"/>
+  <circle cx="548" cy="206" r="6" fill="#2F6F9F" fill-opacity=".55"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Institutional archive line drawing</title>
+  <desc id="desc">A restrained line drawing of columns, papers, and an index grid.</desc>
+  <rect width="720" height="420" fill="#F6F4EF"/>
+  <rect x="48" y="48" width="624" height="324" fill="#FFFFFF" stroke="#D7D5CC"/>
+  <path d="M126 148H360" stroke="#0B2D4D" stroke-width="3"/>
+  <path d="M126 180H320" stroke="#9AA5AD" stroke-width="2"/>
+  <path d="M126 212H342" stroke="#9AA5AD" stroke-width="2"/>
+  <path d="M126 244H292" stroke="#9AA5AD" stroke-width="2"/>
+  <path d="M422 132H586" stroke="#0B2D4D" stroke-width="3"/>
+  <path d="M438 132V278" stroke="#0B2D4D" stroke-width="2"/>
+  <path d="M480 132V278" stroke="#0B2D4D" stroke-width="2"/>
+  <path d="M522 132V278" stroke="#0B2D4D" stroke-width="2"/>
+  <path d="M564 132V278" stroke="#0B2D4D" stroke-width="2"/>
+  <path d="M410 278H598" stroke="#0B2D4D" stroke-width="3"/>
+  <path d="M402 302H606" stroke="#2F6F9F" stroke-width="3"/>
+  <rect x="116" y="302" width="210" height="28" fill="#F2F5F6" stroke="#D7D5CC"/>
+  <path d="M126 316H286" stroke="#9AA5AD" stroke-width="2"/>
+  <circle cx="604" cy="72" r="5" fill="#2F6F9F"/>
+  <circle cx="628" cy="72" r="5" fill="#2F6F9F" fill-opacity=".5"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Market lines illustration</title>
+  <desc id="desc">A restrained chart-like illustration with grid lines and institutional annotations.</desc>
+  <rect width="720" height="420" fill="#F8FAFB"/>
+  <rect x="62" y="54" width="596" height="312" fill="#FFFFFF" stroke="#D7D5CC"/>
+  <path d="M110 310H600" stroke="#D7D5CC"/>
+  <path d="M110 250H600" stroke="#D7D5CC"/>
+  <path d="M110 190H600" stroke="#D7D5CC"/>
+  <path d="M110 130H600" stroke="#D7D5CC"/>
+  <path d="M152 328V98" stroke="#D7D5CC"/>
+  <path d="M248 328V98" stroke="#D7D5CC"/>
+  <path d="M344 328V98" stroke="#D7D5CC"/>
+  <path d="M440 328V98" stroke="#D7D5CC"/>
+  <path d="M536 328V98" stroke="#D7D5CC"/>
+  <path d="M120 284C168 270 190 226 236 232C286 238 300 168 346 174C398 180 416 118 468 126C516 134 542 96 594 86" stroke="#0B2D4D" stroke-width="4"/>
+  <path d="M120 304C174 298 218 286 268 292C330 300 356 250 408 256C466 262 504 216 594 202" stroke="#2F6F9F" stroke-width="3"/>
+  <circle cx="346" cy="174" r="6" fill="#0B2D4D"/>
+  <circle cx="468" cy="126" r="6" fill="#0B2D4D"/>
+  <rect x="116" y="78" width="142" height="24" fill="#F6F4EF" stroke="#D7D5CC"/>
+  <path d="M128 90H236" stroke="#9AA5AD" stroke-width="2"/>
+</svg>

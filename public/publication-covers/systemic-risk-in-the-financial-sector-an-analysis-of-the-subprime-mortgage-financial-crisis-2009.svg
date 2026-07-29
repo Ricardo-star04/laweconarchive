@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="title desc">
+  <title id="title">Archive-designed cover for Systemic Risk in the Financial Sector: An Analysis of the Subprime-Mortgage Financial Crisis</title>
+  <desc id="desc">A restrained archive-designed publication cover for the Law and Economics Archive.</desc>
+  <defs>
+    <clipPath id="titleClip"><rect x="42" y="104" width="316" height="156"/></clipPath>
+    <clipPath id="authorClip"><rect x="42" y="302" width="316" height="72"/></clipPath>
+    <clipPath id="venueClip"><rect x="42" y="446" width="300" height="48"/></clipPath>
+    <clipPath id="topicClip"><rect x="42" y="505" width="260" height="44"/></clipPath>
+  </defs>
+  <rect width="420" height="600" fill="#faf6f4"/>
+  <rect x="24" y="24" width="372" height="552" fill="#ffffff" stroke="#ddd5d5"/>
+  <rect x="24" y="24" width="372" height="10" fill="#b83a4b"/>
+  <text x="42" y="78" fill="#8c1515" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="2.5">LAW AND ECONOMICS ARCHIVE</text>
+  <text clip-path="url(#titleClip)" fill="#820000" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700"><tspan x="42" y="128">Systemic Risk in the</tspan><tspan x="42" y="157">Financial Sector: An</tspan><tspan x="42" y="186">Analysis of the</tspan><tspan x="42" y="215">Subprime-Mortgage</tspan><tspan x="42" y="244">Financial Crisis</tspan></text>
+  <line x1="42" y1="284" x2="338" y2="284" stroke="#ddd5d5"/>
+  <text clip-path="url(#authorClip)" fill="#2e2d29" font-family="Georgia, 'Times New Roman', serif" font-size="15.5"><tspan x="42" y="322">Martin F. Hellwig</tspan></text>
+  <text x="42" y="420" fill="#8c1515" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">2009</text>
+  <text clip-path="url(#venueClip)" fill="#53565a" font-family="Georgia, 'Times New Roman', serif" font-size="14"><tspan x="42" y="462">De Economist</tspan></text>
+  <text clip-path="url(#topicClip)" fill="#53565a" font-family="Georgia, 'Times New Roman', serif" font-size="13.5"><tspan x="42" y="520">Financial Law and Risk Control</tspan></text>
+  
+</svg>
