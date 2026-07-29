@@ -1338,10 +1338,11 @@ export const TOPIC_SECTIONS: TopicSection[] = [
     slug: "financial-law-risk-control",
     title: "Financial Law and Risk Control",
     description:
-      "Research on bank runs, systemic risk, stress testing, prudential supervision, capital requirements, resolution, and financial stability.",
+      "Research on bank runs, systemic risk, prudential supervision, resolution, financial technology, digital assets, and the institutional design of financial stability.",
     researchQuestions: [
       "How should financial law balance systemic-risk prevention, market discipline, and institutional resilience?",
-      "How do stress testing, capital requirements, disclosure rules, and resolution regimes shape financial institutions' risk choices?"
+      "How do stress testing, capital requirements, disclosure rules, and resolution regimes shape financial institutions' risk choices?",
+      "When do financial technologies change the location of intermediation, control, accountability, or system-wide risk rather than simply the delivery channel?"
     ],
     readings: [
       {
@@ -1673,6 +1674,109 @@ export const TOPIC_SECTIONS: TopicSection[] = [
         sourceHref: "https://doi.org/10.1016/j.jbankfin.2005.05.010",
         summary:
           "Examines banking concentration, competition, regulation, and systemic-crisis incidence across countries. The study distinguishes concentration from competitive conditions and provides a basis for testing prudential claims about banking structure."
+      },
+      {
+        title: "The Evolution of FinTech: A New Post-Crisis Paradigm?",
+        authors: "Douglas W. Arner, Janos Barberis, and Ross P. Buckley",
+        year: "2016",
+        venue: "Georgetown Journal of International Law",
+        sourceLabel: "UNSW Research",
+        sourceHref: "https://doi.org/10.2139/ssrn.2676553",
+        summary:
+          "Periodizes the development of financial technology and argues that the post-crisis phase differs in speed, scope, and regulatory salience. The article is a useful starting point for separating longstanding financial innovation from the institutional changes associated with data, platforms, and new entrants."
+      },
+      {
+        title: "Some Simple Economics of the Blockchain",
+        authors: "Christian Catalini and Joshua S. Gans",
+        year: "2016",
+        venue: "NBER Working Paper No. 22952",
+        sourceLabel: "NBER",
+        sourceHref: "https://www.nber.org/papers/w22952",
+        summary:
+          "Models blockchain as a technology that can reduce verification and networking costs while introducing new governance and coordination problems. The paper helps distinguish claims about decentralization from the economic functions that distributed ledgers actually perform."
+      },
+      {
+        title: "FinTech, RegTech, and the Reconceptualization of Financial Regulation",
+        authors: "Douglas W. Arner, Janos Barberis, and Ross P. Buckley",
+        year: "2017",
+        venue: "Northwestern Journal of International Law & Business",
+        sourceLabel: "UNSW Research",
+        sourceHref:
+          "https://research.unsw.edu.au/people/scientia-professor-ross-philip-buckley/publications?page=1&type=journalarticles",
+        summary:
+          "Explains how technology used for compliance and supervision can change the architecture of financial regulation rather than merely lower reporting costs. It connects RegTech to data standardization, continuous monitoring, regulatory capacity, and the design of post-crisis oversight."
+      },
+      {
+        title: "From FinTech to TechFin: The Regulatory Challenges of Data-Driven Finance",
+        authors: "Dirk A. Zetzsche, Ross P. Buckley, Douglas W. Arner, and Janos N. Barberis",
+        year: "2018",
+        venue: "NYU Journal of Law & Business",
+        sourceLabel: "University of Luxembourg ORBilu",
+        sourceHref: "https://hdl.handle.net/10993/38944",
+        summary:
+          "Distinguishes technology firms entering finance from financial firms adopting technology and focuses on the regulatory significance of data-driven platforms. The article identifies data concentration, cross-sector activity, and shifting control points as central challenges for financial law."
+      },
+      {
+        title: "The Blockchain and the New Architecture of Trust",
+        authors: "Kevin Werbach",
+        year: "2018",
+        venue: "MIT Press",
+        sourceLabel: "MIT Press",
+        sourceHref:
+          "https://mitpress.mit.edu/9780262349789/the-blockchain-and-the-new-architecture-of-trust/",
+        summary:
+          "Treats blockchain as a sociotechnical governance system rather than a substitute for law. The book explains how technical protocols, community rules, intermediaries, and legal institutions jointly produce trust and accountability."
+      },
+      {
+        title: "Fintech and the Innovation Trilemma",
+        authors: "Chris Brummer and Yesha Yadav",
+        year: "2019",
+        venue: "Georgetown Law Journal",
+        sourceLabel: "Georgetown Law Journal",
+        sourceHref:
+          "https://www.law.georgetown.edu/georgetown-law-journal/in-print/volume-107/volume-107-issue-2-jan-2019/fintech-and-the-innovation-trilemma/",
+        summary:
+          "Argues that fintech regulation confronts a recurring tradeoff among market integrity, regulatory clarity, and technological innovation. The framework is useful for comparing sandboxes, licensing, enforcement, and disclosure strategies without treating innovation as a costless objective."
+      },
+      {
+        title: "Driverless Finance",
+        authors: "Hilary J. Allen",
+        year: "2020",
+        venue: "Harvard Business Law Review",
+        sourceLabel: "American University Digital Commons",
+        sourceHref: "https://digitalcommons.wcl.american.edu/facsch_lawrev/695/",
+        summary:
+          "Uses robo-investing, marketplace lending, high-frequency trading, and token offerings to examine how sophisticated algorithms can amplify complexity, speed, and correlation. The article places automated finance within financial-stability analysis rather than treating it solely as a consumer-facing innovation."
+      },
+      {
+        title: "Initial Coin Offerings: Financing Growth with Cryptocurrency Token Sales",
+        authors: "Sabrina T. Howell, Marina Niessner, and David Yermack",
+        year: "2020",
+        venue: "Review of Financial Studies",
+        sourceLabel: "Oxford Academic",
+        sourceHref: "https://doi.org/10.1093/rfs/hhz131",
+        summary:
+          "Studies more than 1,500 initial coin offerings and relates disclosure, credible commitment, quality signals, and token liquidity to issuer outcomes. The article supplies empirical evidence for evaluating token sales as a form of entrepreneurial finance."
+      },
+      {
+        title: "Decentralized Finance",
+        authors: "Dirk A. Zetzsche, Douglas W. Arner, and Ross P. Buckley",
+        year: "2020",
+        venue: "Journal of Financial Regulation",
+        sourceLabel: "Oxford Academic",
+        sourceHref: "https://doi.org/10.1093/jfr/fjaa010",
+        summary:
+          "Explains the legal and institutional implications of DeFi and argues that apparent decentralization can produce new points of reconcentration. The article directs regulation toward the control points where accountability, information, and market power remain concentrated."
+      },
+      {
+        title: "DeFi: Shadow Banking 2.0?",
+        authors: "Hilary J. Allen",
+        year: "2023",
+        venue: "William & Mary Law Review",
+        sourceLabel: "American University Digital Commons",
+        sourceHref: "https://digitalcommons.wcl.american.edu/facsch_lawrev/2190/",
+        summary:
+          "Compares decentralized finance with run-prone shadow banking and examines leverage, rigidity, intermediation, and spillovers to the established financial system. The essay provides a financial-stability counterpoint to accounts that treat decentralization as automatically risk-reducing."
       }
     ]
   },

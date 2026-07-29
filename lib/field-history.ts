@@ -1811,6 +1811,106 @@ export const SCHOLAR_PROFILES: ScholarProfile[] = [
     ],
     relevance:
       "Kershaw combines doctrinal history with functional and economic analysis, allowing readers to test whether familiar takeover and fiduciary rules reflect efficient design, path dependence, or the institutional interests of rulemakers."
+  },
+  {
+    name: "Chris Brummer",
+    lifespan: "Contemporary",
+    role: "Scholar of financial technology, financial regulation, and market governance",
+    fields: ["financial technology", "financial regulation", "digital assets"],
+    imageUrl: "/scholar-portraits/chris-brummer.webp",
+    imageAlt: "Portrait of Chris Brummer",
+    imageSource: "Georgetown University Law Center",
+    imageSourceHref: "https://www.law.georgetown.edu/faculty/chris-brummer/",
+    imagePosition: "50% 24%",
+    summary:
+      "Brummer studies financial technology, digital assets, international financial regulation, and the institutional tradeoffs that arise when regulators seek innovation, market integrity, and clear rules at the same time.",
+    majorWorks: [
+      "Fintech and the Innovation Trilemma (with Yesha Yadav, 2019)",
+      "Disclosure, Dapps and DeFi (2022)"
+    ],
+    relevance:
+      "Brummer gives the archive a regulatory-design framework for evaluating fintech without assuming that innovation, investor protection, and administrable rules can always be maximized simultaneously."
+  },
+  {
+    name: "Douglas W. Arner",
+    lifespan: "Contemporary",
+    role: "Scholar of digital finance, financial regulation, and development",
+    fields: ["financial technology", "regulatory technology", "digital finance"],
+    imageUrl: "/scholar-portraits/douglas-w-arner.webp",
+    imageAlt: "Portrait of Douglas W. Arner",
+    imageSource: "The University of Hong Kong Faculty of Law",
+    imageSourceHref: "https://www.law.hku.hk/academic_staff/professor-douglas-w-arner/",
+    imagePosition: "72% 28%",
+    summary:
+      "Arner studies the evolution of financial technology, RegTech, digital finance, financial inclusion, and the legal architecture needed to govern data-intensive financial systems.",
+    majorWorks: [
+      "The Evolution of FinTech: A New Post-Crisis Paradigm? (with Janos Barberis and Ross P. Buckley, 2016)",
+      "FinTech, RegTech, and the Reconceptualization of Financial Regulation (with Janos Barberis and Ross P. Buckley, 2017)",
+      "From FinTech to TechFin (with Dirk A. Zetzsche, Ross P. Buckley, and Janos N. Barberis, 2018)",
+      "Decentralized Finance (with Dirk A. Zetzsche and Ross P. Buckley, 2020)"
+    ],
+    relevance:
+      "Arner connects technological change to financial inclusion, compliance, supervision, and institutional capacity, helping readers distinguish product innovation from changes in regulatory infrastructure."
+  },
+  {
+    name: "Dirk A. Zetzsche",
+    lifespan: "Contemporary",
+    role: "European scholar of financial technology, inclusive finance, and financial law",
+    fields: ["financial technology", "regulatory technology", "EU financial law"],
+    imageUrl: "/scholar-portraits/dirk-a-zetzsche.webp",
+    imageAlt: "Portrait of Dirk A. Zetzsche",
+    imageSource: "ADA and the University of Luxembourg",
+    imageSourceHref:
+      "https://adaimpact.lu/en/presentation-sam-2019/rma/research-meets-africa-committees",
+    imagePosition: "50% 24%",
+    summary:
+      "Zetzsche studies fintech, RegTech, inclusive finance, investment funds, digital assets, and the European legal response to data-driven and decentralized financial services.",
+    majorWorks: [
+      "From FinTech to TechFin (with Ross P. Buckley, Douglas W. Arner, and Janos N. Barberis, 2018)",
+      "Decentralized Finance (with Douglas W. Arner and Ross P. Buckley, 2020)"
+    ],
+    relevance:
+      "Zetzsche adds a European and comparative perspective on how data, platforms, decentralization, and embedded regulation alter the location of control and accountability in finance."
+  },
+  {
+    name: "Ross P. Buckley",
+    lifespan: "Contemporary",
+    role: "Australian scholar of digital finance, financial regulation, and systemic risk",
+    fields: ["financial technology", "financial inclusion", "systemic risk"],
+    imageUrl: "/scholar-portraits/ross-p-buckley.webp",
+    imageAlt: "Portrait of Ross P. Buckley",
+    imageSource: "UNSW Sydney",
+    imageSourceHref: "https://www.unsw.edu.au/staff/ross-buckley",
+    imagePosition: "50% 22%",
+    summary:
+      "Buckley studies financial technology, RegTech, digital financial inclusion, the future of money, and the regulatory risks created by new financial infrastructures and data-intensive business models.",
+    majorWorks: [
+      "The Evolution of FinTech: A New Post-Crisis Paradigm? (with Douglas W. Arner and Janos Barberis, 2016)",
+      "FinTech, RegTech, and the Reconceptualization of Financial Regulation (with Douglas W. Arner and Janos Barberis, 2017)",
+      "From FinTech to TechFin (with Dirk A. Zetzsche, Douglas W. Arner, and Janos N. Barberis, 2018)",
+      "Decentralized Finance (with Dirk A. Zetzsche and Douglas W. Arner, 2020)"
+    ],
+    relevance:
+      "Buckley links fintech to financial inclusion, consumer data, systemic risk, and regulatory capacity, making technological change part of mainstream financial-law analysis."
+  },
+  {
+    name: "Hilary J. Allen",
+    lifespan: "Contemporary",
+    role: "Scholar of financial technology, automation, and financial stability",
+    fields: ["financial technology", "financial stability", "automated finance"],
+    imageUrl: "/scholar-portraits/hilary-j-allen.webp",
+    imageAlt: "Portrait of Hilary J. Allen",
+    imageSource: "American University Washington College of Law",
+    imageSourceHref: "https://www.wcl.american.edu/faculty/hjallen.cfm",
+    imagePosition: "50% 22%",
+    summary:
+      "Allen studies how algorithms, cryptoassets, decentralized finance, and other technological changes can amplify complexity, correlation, leverage, and run risk in the financial system.",
+    majorWorks: [
+      "Driverless Finance (2020)",
+      "DeFi: Shadow Banking 2.0? (2023)"
+    ],
+    relevance:
+      "Allen brings a financial-stability lens to fintech, asking when automation and decentralization create system-wide externalities that product-level disclosure or ordinary market discipline cannot contain."
   }
 ];
 
@@ -1914,7 +2014,12 @@ const SCHOLAR_SURNAMES: Record<string, string> = {
   "Jean-Charles Rochet": "Rochet",
   "Charles A. E. Goodhart": "Goodhart",
   "Thorsten Beck": "Beck",
-  "David Kershaw": "Kershaw"
+  "David Kershaw": "Kershaw",
+  "Chris Brummer": "Brummer",
+  "Douglas W. Arner": "Arner",
+  "Dirk A. Zetzsche": "Zetzsche",
+  "Ross P. Buckley": "Buckley",
+  "Hilary J. Allen": "Allen"
 };
 
 const SCHOLAR_DETAILS: Record<string, ScholarDetail> = {
@@ -2719,6 +2824,46 @@ const SCHOLAR_DETAILS: Record<string, ScholarDetail> = {
     institutionalProfile: [
       "The London School of Economics identifies Kershaw as Professor of Law and lists UK and U.S. corporate law, takeover regulation, and accounting regulation as his principal research areas.",
       "Kershaw is included because his scholarship combines close doctrinal analysis with historical and functional inquiry into fiduciary law, takeover rules, self-regulation, and the institutional production of corporate law."
+    ]
+  },
+  "Chris Brummer": {
+    officialProfileSource: "Georgetown University Law Center",
+    officialProfileHref: "https://www.law.georgetown.edu/faculty/chris-brummer/",
+    institutionalProfile: [
+      "Georgetown Law identifies Brummer as the Agnes Williams Sesquicentennial Professor of Financial Technology and lists financial regulation and technology among his areas of expertise.",
+      "Brummer is included because his innovation-trilemma framework makes the institutional costs of fintech regulation explicit: agencies must manage tradeoffs among market integrity, regulatory clarity, and technological innovation."
+    ]
+  },
+  "Douglas W. Arner": {
+    officialProfileSource: "The University of Hong Kong Faculty of Law",
+    officialProfileHref: "https://www.law.hku.hk/academic_staff/professor-douglas-w-arner/",
+    institutionalProfile: [
+      "HKU Law identifies Arner as Kerry Holdings Professor in Law, RGC Senior Fellow in Digital Finance and Sustainable Development, and Associate Director of the HKU-Standard Chartered FinTech Academy.",
+      "Arner is included because his work traces fintech's institutional evolution and develops regulatory frameworks for RegTech, digital finance, financial inclusion, and decentralized systems."
+    ]
+  },
+  "Dirk A. Zetzsche": {
+    officialProfileSource: "University of Luxembourg",
+    officialProfileHref: "https://www.uni.lu/fdef-en/people/dirk-andreas-zetzsche/",
+    institutionalProfile: [
+      "The University of Luxembourg identifies Zetzsche as Head of its Department of Law, Full Professor in Financial Law, and holder of the ADA Chair in Financial Law and Inclusive Finance.",
+      "Zetzsche is included because his research connects European financial law to fintech, RegTech, data-driven finance, digital assets, and the regulatory consequences of decentralization."
+    ]
+  },
+  "Ross P. Buckley": {
+    officialProfileSource: "UNSW Sydney",
+    officialProfileHref: "https://www.unsw.edu.au/staff/ross-buckley",
+    institutionalProfile: [
+      "UNSW identifies Buckley as a Scientia Professor whose current research includes the future of money, fintech, and the Consumer Data Right, with work on stablecoins, central bank digital currencies, and tokenised deposits.",
+      "Buckley is included because his scholarship joins financial innovation to consumer protection, inclusion, data governance, and systemic-risk regulation across developed and emerging financial systems."
+    ]
+  },
+  "Hilary J. Allen": {
+    officialProfileSource: "American University Washington College of Law",
+    officialProfileHref: "https://www.wcl.american.edu/faculty/hjallen.cfm",
+    institutionalProfile: [
+      "American University Washington College of Law identifies Allen as Professor of Law teaching banking law, securities regulation, and business associations; her research focuses on financial stability regulation and financial technologies.",
+      "Allen is included because her work treats algorithmic and decentralized finance as potential sources of complexity, correlation, leverage, and run risk that require system-level legal analysis."
     ]
   }
 };

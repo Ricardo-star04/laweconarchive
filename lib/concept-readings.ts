@@ -823,6 +823,63 @@ export const CONCEPT_READING_SLUGS = {
     "capital-regulation-after-the-crisis-business-as-usual-2010",
     "the-prudential-regulation-of-banks-1994",
     "bank-concentration-competition-and-crises-first-results-2006"
+  ],
+  "financial-technology": [
+    "the-evolution-of-fintech-a-new-post-crisis-paradigm-2016",
+    "fintech-regtech-and-the-reconceptualization-of-financial-regulation-2017",
+    "from-fintech-to-techfin-the-regulatory-challenges-of-data-driven-finance-2018",
+    "fintech-and-the-innovation-trilemma-2019"
+  ],
+  "regulatory-technology": [
+    "the-evolution-of-fintech-a-new-post-crisis-paradigm-2016",
+    "fintech-regtech-and-the-reconceptualization-of-financial-regulation-2017",
+    "from-fintech-to-techfin-the-regulatory-challenges-of-data-driven-finance-2018",
+    "fintech-and-the-innovation-trilemma-2019"
+  ],
+  "supervisory-technology": [
+    "fintech-regtech-and-the-reconceptualization-of-financial-regulation-2017",
+    "from-fintech-to-techfin-the-regulatory-challenges-of-data-driven-finance-2018",
+    "fintech-and-the-innovation-trilemma-2019"
+  ],
+  "digital-assets": [
+    "some-simple-economics-of-the-blockchain-2016",
+    "the-blockchain-and-the-new-architecture-of-trust-2018",
+    "initial-coin-offerings-financing-growth-with-cryptocurrency-token-sales-2020",
+    "decentralized-finance-2020"
+  ],
+  tokenization: [
+    "some-simple-economics-of-the-blockchain-2016",
+    "the-blockchain-and-the-new-architecture-of-trust-2018",
+    "initial-coin-offerings-financing-growth-with-cryptocurrency-token-sales-2020",
+    "decentralized-finance-2020"
+  ],
+  "smart-contracts": [
+    "some-simple-economics-of-the-blockchain-2016",
+    "the-blockchain-and-the-new-architecture-of-trust-2018",
+    "decentralized-finance-2020",
+    "defi-shadow-banking-2-0-2023"
+  ],
+  stablecoins: [
+    "the-blockchain-and-the-new-architecture-of-trust-2018",
+    "decentralized-finance-2020",
+    "defi-shadow-banking-2-0-2023"
+  ],
+  "central-bank-digital-currency": [
+    "the-evolution-of-fintech-a-new-post-crisis-paradigm-2016",
+    "from-fintech-to-techfin-the-regulatory-challenges-of-data-driven-finance-2018",
+    "decentralized-finance-2020"
+  ],
+  "decentralized-finance": [
+    "some-simple-economics-of-the-blockchain-2016",
+    "the-blockchain-and-the-new-architecture-of-trust-2018",
+    "decentralized-finance-2020",
+    "defi-shadow-banking-2-0-2023"
+  ],
+  "automated-finance": [
+    "fintech-and-the-innovation-trilemma-2019",
+    "driverless-finance-2020",
+    "decentralized-finance-2020",
+    "defi-shadow-banking-2-0-2023"
   ]
 } as const satisfies Record<string, readonly string[]>;
 

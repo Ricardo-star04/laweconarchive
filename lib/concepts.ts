@@ -1608,6 +1608,150 @@ export const CONCEPT_ENTRIES: ConceptEntry[] = [
       "Risk-weighted assets are neither total accounting assets nor a complete measure of economic risk. Results depend on the applicable Basel implementation, exposure class, mitigation rules, and whether standardized or internal-model approaches are used.",
     referenceLabel: "Basel Committee: Basel Framework",
     referenceHref: "https://www.bis.org/basel_framework/"
+  },
+  {
+    term: "Financial Technology",
+    field: "Financial Technology",
+    level: "Introductory",
+    definition:
+      "Technology-enabled innovation in financial services that can produce new business models, applications, processes, or products with material effects on financial markets, institutions, or the provision of financial services.",
+    whyItMatters:
+      "FinTech is an umbrella category, not a single legal form. Functional analysis asks which financial activity is performed, where risks and control reside, and whether the relevant rules should attach to an entity, activity, product, or infrastructure.",
+    related: ["financial innovation", "digital finance", "platform governance", "functional regulation"],
+    caution:
+      "Do not equate every use of software by a financial firm with legally significant FinTech. The analysis should identify the affected function, the institutional change, and the resulting allocation of risk or control.",
+    referenceLabel: "Financial Stability Board: Financial Innovation",
+    referenceHref:
+      "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/financial-innovation/"
+  },
+  {
+    term: "Regulatory Technology",
+    field: "Financial Technology",
+    level: "Introductory",
+    definition:
+      "The use of technology by regulated institutions and service providers to support regulatory compliance, risk management, reporting, monitoring, and control processes.",
+    whyItMatters:
+      "RegTech can lower compliance costs and improve the timeliness and granularity of regulatory information, but it can also create outsourcing, model, cybersecurity, concentration, and accountability risks.",
+    related: ["compliance", "regulatory reporting", "data standards", "operational risk"],
+    caution:
+      "Automation does not transfer legal responsibility away from the regulated institution. A RegTech tool's output depends on data quality, rule translation, model governance, and the institution's ability to challenge and correct it.",
+    referenceLabel: "BIS: Building a more diverse suptech ecosystem",
+    referenceHref: "https://www.bis.org/fsi/fsibriefs23.htm"
+  },
+  {
+    term: "Supervisory Technology",
+    field: "Financial Technology",
+    level: "Introductory",
+    definition:
+      "The use of innovative technologies by financial authorities to support supervision, surveillance, data collection, analysis, and other regulatory functions.",
+    whyItMatters:
+      "SupTech can expand supervisory capacity through more timely data and automated detection, while changing how authorities allocate attention, verify firms' reports, and exercise judgment.",
+    related: ["financial supervision", "regulatory data", "machine learning", "enforcement capacity"],
+    caution:
+      "A more powerful detection system is not automatically a better supervisory system. False positives, opaque models, fragmented data, procurement dependence, and procedural fairness remain institutional constraints.",
+    referenceLabel: "BIS: The suptech generations",
+    referenceHref: "https://www.bis.org/fsi/publ/insights19.htm"
+  },
+  {
+    term: "Digital Assets",
+    field: "Financial Technology",
+    level: "Introductory",
+    definition:
+      "Digitally represented items, rights, or claims whose creation, transfer, or record-keeping relies on electronic systems; crypto-assets are a narrower category that primarily depends on cryptography and distributed-ledger or similar technology.",
+    whyItMatters:
+      "The label does not determine legal classification. A digital asset may implicate securities, commodities, payment, property, insolvency, custody, consumer-protection, or other rules depending on the rights, functions, and institutional arrangement involved.",
+    related: ["crypto-assets", "tokenization", "custody", "property rights"],
+    caution:
+      "Do not infer legal status from technological form or marketing terminology. Classification requires examining the issuer, holder rights, transfer mechanism, economic function, and applicable jurisdiction.",
+    referenceLabel: "Financial Stability Board: Crypto-assets and Global Stablecoins",
+    referenceHref:
+      "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/crypto-assets-and-global-stablecoins/"
+  },
+  {
+    term: "Tokenization",
+    field: "Financial Technology",
+    level: "Intermediate",
+    definition:
+      "The digital representation of money, financial claims, physical assets, or other rights as tokens recorded on a programmable platform.",
+    whyItMatters:
+      "Tokenization can alter issuance, record-keeping, transfer, settlement, collateral use, and market intermediation. Its legal value depends on whether the token reliably corresponds to enforceable rights in the referenced asset or claim.",
+    related: ["digital assets", "programmable platforms", "settlement", "asset custody"],
+    caution:
+      "A token is not necessarily the asset itself. The legal analysis should identify the governing registry, the claim against any issuer or custodian, redemption rights, insolvency treatment, and what happens when on-chain and off-chain records diverge.",
+    referenceLabel: "BIS and CPMI: Tokenisation in the context of money and other assets",
+    referenceHref: "https://www.bis.org/cpmi/publ/d225.htm"
+  },
+  {
+    term: "Smart Contracts",
+    field: "Financial Technology",
+    level: "Intermediate",
+    definition:
+      "Computer programs that automatically execute some or all actions when specified conditions are met; a smart legal contract is a legally binding agreement in which contractual obligations are defined or performed through such code.",
+    whyItMatters:
+      "Smart contracts can reduce verification and performance costs, but they also shift attention to code specification, data inputs, upgrade authority, error correction, interpretation, jurisdiction, and remedies.",
+    related: ["automation", "oracles", "contract interpretation", "distributed ledgers"],
+    caution:
+      "Code execution and legal enforceability are distinct. Bugs, ambiguous prose, external data failures, unauthorized transactions, and mandatory legal rules can require remedies that the program does not provide.",
+    referenceLabel: "Law Commission: Smart contracts",
+    referenceHref: "https://lawcom.gov.uk/project/smart-contracts/"
+  },
+  {
+    term: "Stablecoins",
+    field: "Financial Technology",
+    level: "Intermediate",
+    definition:
+      "Digital assets designed to maintain a stable value relative to a specified asset, currency, or basket through reserves, redemption arrangements, algorithms, or combinations of these mechanisms.",
+    whyItMatters:
+      "Stablecoins can perform payment, settlement, trading, and collateral functions. Their legal and economic risks depend on reserve quality, custody, redemption rights, governance, operational resilience, and connections to traditional finance.",
+    related: ["payments", "redemption", "reserve assets", "run risk"],
+    caution:
+      "The word stable describes a design objective, not a guarantee. Different arrangements expose holders to different market, liquidity, credit, operational, and legal risks.",
+    referenceLabel: "Financial Stability Board: Global Stablecoin Recommendations",
+    referenceHref:
+      "https://www.fsb.org/2023/07/high-level-recommendations-for-the-regulation-supervision-and-oversight-of-global-stablecoin-arrangements-final-report/"
+  },
+  {
+    term: "Central Bank Digital Currency",
+    field: "Financial Technology",
+    level: "Intermediate",
+    definition:
+      "A digital form of central bank money, designed either for general public use as a retail CBDC or for use among financial intermediaries as a wholesale CBDC.",
+    whyItMatters:
+      "CBDC design can affect payments, settlement finality, privacy, financial inclusion, bank funding, monetary sovereignty, cross-border interoperability, and the institutional role of the central bank.",
+    related: ["central bank money", "payments", "settlement finality", "financial inclusion"],
+    caution:
+      "Retail and wholesale CBDCs solve different problems and create different risks. Analysis should state the access model, ledger design, intermediary role, privacy architecture, remuneration, limits, and convertibility rules.",
+    referenceLabel: "BIS: Central bank digital currencies",
+    referenceHref: "https://www.bis.org/fsi/fsisummaries/cbdcs.htm"
+  },
+  {
+    term: "Decentralized Finance",
+    field: "Financial Technology",
+    level: "Intermediate",
+    definition:
+      "A collection of crypto-asset services that seek to replicate financial functions through smart contracts and distributed networks while reducing or changing reliance on conventional intermediaries.",
+    whyItMatters:
+      "DeFi can relocate rather than eliminate intermediation. Governance rights, protocol development, oracles, interfaces, validators, stablecoins, and custody arrangements can become new control points for responsibility and regulation.",
+    related: ["smart contracts", "digital assets", "decentralization", "embedded regulation"],
+    caution:
+      "A system should not be treated as decentralized solely because transactions settle on a distributed ledger. Control over code, upgrades, data, interfaces, keys, and governance may remain concentrated.",
+    referenceLabel: "Financial Stability Board: The Financial Stability Risks of DeFi",
+    referenceHref:
+      "https://www.fsb.org/2023/02/the-financial-stability-risks-of-decentralised-finance/"
+  },
+  {
+    term: "Automated Finance",
+    field: "Financial Technology",
+    level: "Intermediate",
+    definition:
+      "Financial decision-making, execution, monitoring, or intermediation performed substantially through algorithms, including systems used for trading, lending, investing, risk management, and token-based finance.",
+    whyItMatters:
+      "Automation can increase speed and consistency while also magnifying correlated behavior, model error, complexity, operational dependence, and feedback loops across institutions and markets.",
+    related: ["algorithms", "model risk", "financial stability", "robo-advice"],
+    caution:
+      "Automation does not remove human design choices or institutional responsibility. Analysis should identify who selects objectives, supplies data, validates models, controls overrides, and bears losses when the system fails.",
+    referenceLabel: "American University Digital Commons: Driverless Finance",
+    referenceHref: "https://digitalcommons.wcl.american.edu/facsch_lawrev/695/"
   }
 ];
 
