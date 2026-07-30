@@ -242,14 +242,19 @@ export function LiteratureIndex({
     router.replace(pathname, { scroll: false });
   }
 
-  function expandGroup(groupKey: string) {
-    const nextExpandedGroups = { ...expandedGroups, [groupKey]: true };
+  function toggleGroup(groupKey: string) {
+    const nextExpandedGroups = { ...expandedGroups, [groupKey]: !expandedGroups[groupKey] };
     const params = new URLSearchParams(searchParams?.toString());
     const expandedKeys = Object.keys(nextExpandedGroups).filter((key) => nextExpandedGroups[key]);
 
     setExpandedGroups(nextExpandedGroups);
-    params.set(EXPANDED_GROUPS_PARAM, expandedKeys.join(","));
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    if (expandedKeys.length) {
+      params.set(EXPANDED_GROUPS_PARAM, expandedKeys.join(","));
+    } else {
+      params.delete(EXPANDED_GROUPS_PARAM);
+    }
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }
 
   return (
@@ -383,6 +388,7 @@ export function LiteratureIndex({
           const shouldLimit = isDefaultView && !isExpanded && group.readings.length > DEFAULT_GROUP_LIMIT;
           const displayedReadings = shouldLimit ? group.readings.slice(0, DEFAULT_GROUP_LIMIT) : group.readings;
           const hiddenCount = group.readings.length - displayedReadings.length;
+          const canToggleGroup = isDefaultView && group.readings.length > DEFAULT_GROUP_LIMIT;
 
           return (
             <section key={group.key} className="grid gap-5 border-t border-border/70 py-7 lg:grid-cols-[190px_minmax(0,1fr)]">
@@ -443,13 +449,14 @@ export function LiteratureIndex({
                   ))}
                 </div>
 
-                {hiddenCount > 0 ? (
+                {canToggleGroup ? (
                   <button
                     type="button"
-                    onClick={() => expandGroup(group.key)}
+                    onClick={() => toggleGroup(group.key)}
+                    aria-expanded={Boolean(isExpanded)}
                     className="mt-3 w-full bg-paper/70 py-3 text-sm text-institute underline underline-offset-2 hover:bg-paper"
                   >
-                    Show {hiddenCount} more readings in this group
+                    {isExpanded ? "Collapse readings in this group" : `Show ${hiddenCount} more readings in this group`}
                   </button>
                 ) : null}
               </div>
