@@ -20,6 +20,7 @@ const SORT_OPTIONS = [
 ] as const;
 
 const DEFAULT_GROUP_LIMIT = 4;
+const EXPANDED_GROUPS_PARAM = "expanded";
 
 type SortOption = (typeof SORT_OPTIONS)[number]["value"];
 
@@ -48,6 +49,18 @@ type ReadingGroup = {
   title: string;
   readings: IndexedReading[];
 };
+
+function getExpandedGroups(value: string | null): Record<string, boolean> {
+  if (!value) return {};
+
+  return Object.fromEntries(
+    value
+      .split(",")
+      .map((key) => key.trim())
+      .filter((key) => /^[a-z0-9-]+$/.test(key))
+      .map((key) => [key, true])
+  );
+}
 
 function isArchiveDefaultFilter({
   activeField,
@@ -108,7 +121,9 @@ export function LiteratureIndex({
       ? (searchParams?.get("sort") as SortOption)
       : "field"
   }));
-  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(() =>
+    getExpandedGroups(searchParams?.get(EXPANDED_GROUPS_PARAM) ?? null)
+  );
   const activeField = filters.field;
   const activeLevel = filters.level;
   const activeType = filters.type;
@@ -225,6 +240,16 @@ export function LiteratureIndex({
     setFilters(DEFAULT_FILTERS);
     setExpandedGroups({});
     router.replace(pathname, { scroll: false });
+  }
+
+  function expandGroup(groupKey: string) {
+    const nextExpandedGroups = { ...expandedGroups, [groupKey]: true };
+    const params = new URLSearchParams(searchParams?.toString());
+    const expandedKeys = Object.keys(nextExpandedGroups).filter((key) => nextExpandedGroups[key]);
+
+    setExpandedGroups(nextExpandedGroups);
+    params.set(EXPANDED_GROUPS_PARAM, expandedKeys.join(","));
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }
 
   return (
@@ -421,7 +446,7 @@ export function LiteratureIndex({
                 {hiddenCount > 0 ? (
                   <button
                     type="button"
-                    onClick={() => setExpandedGroups((current) => ({ ...current, [group.key]: true }))}
+                    onClick={() => expandGroup(group.key)}
                     className="mt-3 w-full bg-paper/70 py-3 text-sm text-institute underline underline-offset-2 hover:bg-paper"
                   >
                     Show {hiddenCount} more readings in this group
