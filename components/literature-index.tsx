@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { FilterPanel } from "@/components/filter-panel";
 import { PublicationCover } from "@/components/venue-cover";
 import { getReadingDoi, getReadingPublicationType } from "@/lib/topics";
@@ -21,6 +21,7 @@ const SORT_OPTIONS = [
 
 const DEFAULT_GROUP_LIMIT = 4;
 const EXPANDED_GROUPS_PARAM = "expanded";
+const GROUP_SCROLL_STORAGE_PREFIX = "literature-group-scroll:";
 
 type SortOption = (typeof SORT_OPTIONS)[number]["value"];
 
@@ -60,6 +61,31 @@ function getExpandedGroups(value: string | null): Record<string, boolean> {
       .filter((key) => /^[a-z0-9-]+$/.test(key))
       .map((key) => [key, true])
   );
+}
+
+function getStoredGroupScrollY(groupKey: string) {
+  try {
+    const value = Number.parseFloat(window.sessionStorage.getItem(`${GROUP_SCROLL_STORAGE_PREFIX}${groupKey}`) ?? "");
+    return Number.isFinite(value) ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+function storeGroupScrollY(groupKey: string) {
+  try {
+    window.sessionStorage.setItem(`${GROUP_SCROLL_STORAGE_PREFIX}${groupKey}`, String(window.scrollY));
+  } catch {
+    // The group heading fallback still prevents the page from landing at the footer.
+  }
+}
+
+function clearStoredGroupScrollY(groupKey: string) {
+  try {
+    window.sessionStorage.removeItem(`${GROUP_SCROLL_STORAGE_PREFIX}${groupKey}`);
+  } catch {
+    // Nothing else needs to be done when browser storage is unavailable.
+  }
 }
 
 function isArchiveDefaultFilter({
@@ -124,6 +150,7 @@ export function LiteratureIndex({
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(() =>
     getExpandedGroups(searchParams?.get(EXPANDED_GROUPS_PARAM) ?? null)
   );
+  const pendingScrollRestore = useRef<{ groupKey: string; scrollY: number | null } | null>(null);
   const activeField = filters.field;
   const activeLevel = filters.level;
   const activeType = filters.type;
@@ -243,9 +270,22 @@ export function LiteratureIndex({
   }
 
   function toggleGroup(groupKey: string) {
-    const nextExpandedGroups = { ...expandedGroups, [groupKey]: !expandedGroups[groupKey] };
+    const isExpanded = Boolean(expandedGroups[groupKey]);
+    const nextExpandedGroups = { ...expandedGroups };
     const params = new URLSearchParams(searchParams?.toString());
-    const expandedKeys = Object.keys(nextExpandedGroups).filter((key) => nextExpandedGroups[key]);
+
+    if (isExpanded) {
+      delete nextExpandedGroups[groupKey];
+      pendingScrollRestore.current = {
+        groupKey,
+        scrollY: getStoredGroupScrollY(groupKey)
+      };
+    } else {
+      nextExpandedGroups[groupKey] = true;
+      storeGroupScrollY(groupKey);
+    }
+
+    const expandedKeys = Object.keys(nextExpandedGroups);
 
     setExpandedGroups(nextExpandedGroups);
     if (expandedKeys.length) {
@@ -256,6 +296,21 @@ export function LiteratureIndex({
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }
+
+  useLayoutEffect(() => {
+    const pending = pendingScrollRestore.current;
+    if (!pending) return;
+
+    pendingScrollRestore.current = null;
+    if (pending.scrollY !== null) {
+      window.scrollTo(0, pending.scrollY);
+      clearStoredGroupScrollY(pending.groupKey);
+      return;
+    }
+
+    const group = document.getElementById(`reading-group-${pending.groupKey}`);
+    if (group) window.scrollTo(0, Math.max(0, group.offsetTop - 96));
+  }, [expandedGroups]);
 
   return (
     <section className="space-y-8">
@@ -391,7 +446,11 @@ export function LiteratureIndex({
           const canToggleGroup = isDefaultView && group.readings.length > DEFAULT_GROUP_LIMIT;
 
           return (
-            <section key={group.key} className="grid gap-5 border-t border-border/70 py-7 lg:grid-cols-[190px_minmax(0,1fr)]">
+            <section
+              id={`reading-group-${group.key}`}
+              key={group.key}
+              className="grid gap-5 border-t border-border/70 py-7 lg:grid-cols-[190px_minmax(0,1fr)]"
+            >
               <div className="py-1">
                 <h3 className="font-serifCn text-2xl leading-tight text-accent">{group.title}</h3>
                 <p className="mt-2 text-sm text-muted">{group.readings.length} readings</p>
